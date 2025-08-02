@@ -1,22 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Hello World</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AME Japan</title>
   <style>
     body {
-      background-color: #f0f0f0;
-      text-align: center;
       font-family: Arial, sans-serif;
-      margin-top: 100px;
+      margin: 0;
+      background-color: #f8f9fa;
     }
-    h1 {
-      color: #333;
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 25px;
+      background-color: #002244;
+      color: white;
+    }
+
+    header img {
+      height: 150px;
+      filter: drop-shadow(0 0 4px white);
+    }
+
+    .header-text {
+      text-align: right;
+      font-size: 14px;
+    }
+
+    nav {
+      background-color: #004466;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav button {
+      background: none;
+      border: none;
+      color: white;
+      padding: 14px 20px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    nav button:hover {
+      background-color: #006699;
+    }
+
+    section {
+      display: none;
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+      background-color: white;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      margin-top: 30px;
+      border-radius: 8px;
+    }
+
+    section.active {
+      display: block;
+    }
+
+    section img {
+      width: 100%;
+      margin-top: 20px;
+      border-radius: 6px;
+    }
+
+    footer {
+      background-color: #002244;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+      font-size: 14px;
     }
   </style>
 </head>
 <body>
-  <h1>Hello, World!</h1>
-  <p>This is your first GitHub Pages website 🚀</p>
+
+<header>
+  <div style="display: flex; align-items: center; gap: 20px;">
+    <img src="ame_logo_big_nobg.png" alt="AME Logo">
+    <div class="header-text">
+      <h1>AME</h1>
+      <p>Japan<br>Email: info@ame.com | Call: +96 888 7770</p>
+    </div>
+  </div>
+</header>
+
+<nav>
+  <button onclick="showSection('home')">Home</button>
+  <button onclick="showSection('about')">About</button>
+  <button onclick="showSection('career')">Career</button>
+  <button onclick="showSection('contact')">Contact Us</button>
+</nav>
+
+<section id="home" class="active">
+  <h2>AME Corporation Japan</h2>
+  <p>Content to be added by the client. Topic: Construction.</p>
+  <img src="architecture-building-city-439416.jpg" alt="Construction Project">
+</section>
+
+<section id="about">
+  <h2>About AME Corporation</h2>
+  <p>
+    This company is founded in 1996 by Jin Jan Jo in Japan, Tokyo.
+    It started as a small construction business and has grown into a global construction company.
+    AME is known for building modern structures with a focus on technology, sustainability, and safety.
+  </p>
+  <img src="OIP.webp" alt="Engineers on Site">
+</section>
+
+<section id="career">
+  <h2>Career</h2>
+  <p>
+    AME Japan is always on the lookout for passionate individuals to join our team. We believe in building not only great structures, but also great careers.
+    Whether you're an experienced engineer or a fresh graduate eager to contribute to world-class projects, we have opportunities for you.
+    We offer training, mentorship, and a supportive environment to help you grow.
+    We believe in fostering innovation and continuous learning. Our team members enjoy a collaborative culture and the opportunity to make meaningful contributions to major infrastructure projects across Japan and beyond.
+    Please call us on:<br>
+    M: +96 888 77 90<br>
+    and send your resume to info@ame.com
+  </p>
+  <img src="OIP (1).webp" alt="Career at AME">
+</section>
+
+<section id="contact">
+  <h2>Contact Us</h2>
+  <p>
+    Please contact us:<br>
+    M: +96 888 7770<br>
+    E: contactus@ame.com<br>
+    Address: X Tower, Tokyo, Japan
+  </p>
+</section>
+
+<footer>
+  <p>Copyright © 2025–26<br>
+  Designed by <strong>Mehran</strong></p>
+</footer>
+
+<script>
+  function showSection(id) {
+    document.querySelectorAll('section').forEach(section => {
+      section.classList.remove('active');
+    });
+    document.getElementById(id).classList.add('active');
+  }
+</script>
+
 </body>
 </html>
